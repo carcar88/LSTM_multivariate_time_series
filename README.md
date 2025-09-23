@@ -48,24 +48,24 @@ Model prediksi yang digunakan adalah model LSTM (Long Short-Term Memory). Pemili
 | THC | Total Hydrocarbons | ug/m3 |
 
 **Langkah analisis dan pemodelan:**
-1.	Exploratory Data Analysis (EDA)
+1.	Exploratory Data Analysis (EDA)  
 EDA dimulai dengan visualisasi line chart untuk target variable AT seiring berjalannya waktu. Hal ini dilakukan untuk menentukan apakah ada pola tertentu yang dapat digunakan dalam membuat model. Tanpa adanya pola tersebut, maka model yang dibuat tidak mungkin memprediksi AT dengan akurat.
-2.	Pembersihan dan preprocessing data
-Dilakukan pengecekan missing value. Variabel ‘eth_benzene’ yang memiliki jumlah missing value 50,85% dihapuskan dari dataset karena dapat merusak akurasi model. Setelah itu, dilakukan pengecekan outlier menggunakan boxplot. Informasi ini digunakan di tahap selanjutnya, yaitu imputasi missing values. Kemudian, dataset dibagi menjadi dataset x dan y berdasarkan sliding window dengan ukuran lima. Terakhir, dataset dipisah menjadi training dan testing dataset
-3.	Pemodelan
-Base model dibangun dengan satu LSTM layer dan satu regressor layer. Setelah itu, model dilatih sebanyak sepuluh epoch saja. Setelah memvisualisasi loss dan MAE model, base model dimodifikasi dengan menambahkan dua LSTM layer. Model kedua pun dilatih menggunakan sepuluh epoch. Terakhir, dilakukan visualisasi loss dan MAE model.
-4.	Evaluasi model
-Selain menggunakan visualisasi MAE dan loss model, evaluasi juga dilakukan menggunakan skor MAE, MSE, dan R2 yang dilakukan pada testing dataset.
+2.	Pembersihan dan preprocessing data  
+Dilakukan pengecekan missing value. Variabel ‘eth_benzene’ yang memiliki jumlah missing value 50,85% dihapuskan dari dataset karena dapat merusak akurasi model. Setelah itu, dilakukan pengecekan outlier menggunakan boxplot. Informasi ini digunakan di tahap selanjutnya, yaitu imputasi missing values. Kemudian, dataset dibagi menjadi dataset x dan y berdasarkan sliding window dengan ukuran lima. Terakhir, dataset dipisah menjadi training dan testing dataset  
+3.	Pemodelan  
+Base model dibangun dengan satu LSTM layer dan satu regressor layer. Setelah itu, model dilatih sebanyak sepuluh epoch saja. Setelah memvisualisasi loss dan MAE model, base model dimodifikasi dengan menambahkan dua LSTM layer. Model kedua pun dilatih menggunakan sepuluh epoch. Terakhir, dilakukan visualisasi loss dan MAE model.  
+4.	Evaluasi model  
+Selain menggunakan visualisasi MAE dan loss model, evaluasi juga dilakukan menggunakan skor MAE, MSE, dan R2 yang dilakukan pada testing dataset.  
 
-**Hasil dan Kesimpulan:**
-Setelah membandingkan kinerja kedua model, ditemukan bahwa model kedua memiliki akurasi yang jauh lebih tinggi daripada model pertama. Berikut adalah skor masing-masing model.
-Base model MAE score: 28.658918180622038
-Base model MSE score: 1464.3793530144183
-Base model R2 score: -0.1957010917268791
+**Hasil dan Kesimpulan:**  
+Setelah membandingkan kinerja kedua model, ditemukan bahwa model kedua memiliki akurasi yang jauh lebih tinggi daripada model pertama. Berikut adalah skor masing-masing model.  
+Base model MAE score: 28.658918180622038  
+Base model MSE score: 1464.3793530144183  
+Base model R2 score: -0.1957010917268791  
 
-Modified model MAE score: 9.92235530888448
-Modified model MSE score: 241.13943737034398
-Modified model R2 score: 0.8031038283020051
+Modified model MAE score: 9.92235530888448  
+Modified model MSE score: 241.13943737034398  
+Modified model R2 score: 0.8031038283020051  
 
 **Teknologi dan libraries yang digunakan:**
 •	LSTM Model
