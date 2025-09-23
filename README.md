@@ -1,8 +1,8 @@
 # LSTM Multivariate Time Series Model
 
-Tujuan: 
+Tujuan:  
 Membangun model prediksi temperatur udara berdasarkan data 5 hari terakhir mengenai 33 variabel kualitas udara dan meteorologis seperti PM10, NO, CO2, Wind Direction, dll. 
-Metodologi: 
+Metodologi:  
 Model prediksi yang digunakan adalah model LSTM (Long Short-Term Memory). Pemilihan model LSTM dilatarbelakangi oleh kemampuannya untuk secara efektif menangkap depencency jangka panjang dan pendek (pola fluktuatif target variable) pada time series dataset. Selain itu, model LSTM dapat menangkap hubungan kompleks antara 33 variabel input yang dimiliki.
 
 **Fitur-fitur dataset:**
