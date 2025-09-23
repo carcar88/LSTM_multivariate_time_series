@@ -68,10 +68,10 @@ Modified model MSE score: 241.13943737034398
 Modified model R2 score: 0.8031038283020051  
 
 **Teknologi dan libraries yang digunakan:**
-•	LSTM Model
-•	pandas
-•	numpy
-•	matplotlib.pyplot 
-•	sklearn
-•	numpy sliding window
-•	tensorflow
+•	LSTM Model  
+•	pandas  
+•	numpy  
+•	matplotlib.pyplot   
+•	sklearn  
+•	numpy sliding window  
+•	tensorflow  
