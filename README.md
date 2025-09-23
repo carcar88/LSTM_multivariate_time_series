@@ -6,7 +6,7 @@ Membangun model prediksi temperatur udara berdasarkan data 5 hari terakhir menge
 **Metodologi:**  
 Model prediksi yang digunakan adalah model LSTM (Long Short-Term Memory). Pemilihan model LSTM dilatarbelakangi oleh kemampuannya untuk secara efektif menangkap depencency jangka panjang dan pendek (pola fluktuatif target variable) pada time series dataset. Selain itu, model LSTM dapat menangkap hubungan kompleks antara 33 variabel input yang dimiliki.
 
-**Fitur-fitur dataset:**
+**Fitur-fitur dataset:**  
 | Variabel | Deskripsi | Satuan |
 | :--- | :--- | :--- |
 | From Date | Starting date of data collection | - |
@@ -47,7 +47,7 @@ Model prediksi yang digunakan adalah model LSTM (Long Short-Term Memory). Pemili
 | SR | Solar Radiation | W/mt2, ug/m3 |
 | THC | Total Hydrocarbons | ug/m3 |
 
-**Langkah analisis dan pemodelan:**
+**Langkah analisis dan pemodelan:**  
 1.	Exploratory Data Analysis (EDA)  
 EDA dimulai dengan visualisasi line chart untuk target variable AT seiring berjalannya waktu. Hal ini dilakukan untuk menentukan apakah ada pola tertentu yang dapat digunakan dalam membuat model. Tanpa adanya pola tersebut, maka model yang dibuat tidak mungkin memprediksi AT dengan akurat.
 2.	Pembersihan dan preprocessing data  
@@ -67,7 +67,7 @@ Modified model MAE score: 9.92235530888448
 Modified model MSE score: 241.13943737034398  
 Modified model R2 score: 0.8031038283020051  
 
-**Teknologi dan libraries yang digunakan:**
+**Teknologi dan libraries yang digunakan:**  
 •	LSTM Model  
 •	pandas  
 •	numpy  
