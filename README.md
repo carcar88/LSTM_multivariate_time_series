@@ -72,6 +72,6 @@ Modified model R2 score: 0.8031038283020051
 •	pandas  
 •	numpy  
 •	matplotlib.pyplot   
-•	sklearn  
+•	scikit-learn  
 •	numpy sliding window  
 •	tensorflow  
