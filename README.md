@@ -1,12 +1,12 @@
 # LSTM Multivariate Time Series Model
 
 **Tujuan:**  
-Membangun model prediksi temperatur udara berdasarkan data 5 hari terakhir mengenai 33 variabel kualitas udara dan meteorologis seperti PM10, NO, CO2, Wind Direction, dll.  
+Membangun model prediksi temperatur/kualitas udara berdasarkan data 5 hari terakhir mengenai 33 variabel kualitas udara dan meteorologis seperti PM10, NO, CO2, Wind Direction, dll.  
 
 **Metodologi:**  
-Model prediksi yang digunakan adalah model LSTM (Long Short-Term Memory). Pemilihan model LSTM dilatarbelakangi oleh kemampuannya untuk secara efektif menangkap depencency jangka panjang dan pendek (pola fluktuatif target variable) pada time series dataset. Selain itu, model LSTM dapat menangkap hubungan kompleks antara 33 variabel input yang dimiliki.
+Model prediksi yang digunakan adalah model LSTM (Long Short-Term Memory). Pemilihan model LSTM dilatarbelakangi oleh kemampuannya untuk secara efektif menangkap _depencency_ jangka panjang dan pendek (pola fluktuatif _target variable_) pada _time series dataset_. Selain itu, model LSTM dapat menangkap hubungan kompleks antara 33 variabel _input_ yang dimiliki.
 
-**Fitur-fitur dataset:**  
+**Fitur-fitur _Dataset_:**  
 | Variabel | Deskripsi | Satuan |
 | :--- | :--- | :--- |
 | From Date | Starting date of data collection | - |
@@ -47,27 +47,27 @@ Model prediksi yang digunakan adalah model LSTM (Long Short-Term Memory). Pemili
 | SR | Solar Radiation | W/mt2, ug/m3 |
 | THC | Total Hydrocarbons | ug/m3 |
 
-**Langkah analisis dan pemodelan:**  
-1.	Exploratory Data Analysis (EDA)  
-EDA dimulai dengan visualisasi line chart untuk target variable AT seiring berjalannya waktu. Hal ini dilakukan untuk menentukan apakah ada pola tertentu yang dapat digunakan dalam membuat model. Tanpa adanya pola tersebut, maka model yang dibuat tidak mungkin memprediksi AT dengan akurat.
-2.	Pembersihan dan preprocessing data  
-Dilakukan pengecekan missing value. Variabel ‘eth_benzene’ yang memiliki jumlah missing value 50,85% dihapuskan dari dataset karena dapat merusak akurasi model. Setelah itu, dilakukan pengecekan outlier menggunakan boxplot. Informasi ini digunakan di tahap selanjutnya, yaitu imputasi missing values. Kemudian, dataset dibagi menjadi dataset x dan y berdasarkan sliding window dengan ukuran lima. Terakhir, dataset dipisah menjadi training dan testing dataset  
+**Langkah Analisis dan Pemodelan:**  
+1.	_Exploratory Data Analysis_ (EDA)  
+EDA dimulai dengan visualisasi line chart untuk _target variable_ AT seiring berjalannya waktu. Hal ini dilakukan untuk menentukan apakah ada pola tertentu yang dapat digunakan dalam membuat model. Tanpa adanya pola tersebut, maka model yang dibuat tidak mungkin memprediksi AT dengan akurat.
+2.	Pembersihan dan _preprocessing_ data  
+Dilakukan pengecekan _missing value_. Variabel ‘eth_benzene’ yang memiliki jumlah _missing value_ 50,85% dihapuskan dari _dataset_ karena dapat merusak akurasi model. Setelah itu, dilakukan pengecekan _outlier_ menggunakan boxplot. Informasi ini digunakan di tahap selanjutnya, yaitu imputasi _missing values_. Kemudian, _dataset_ dibagi menjadi _dataset_ x dan y menggunakan _sliding window_ dengan ukuran lima. Terakhir, _dataset_ dipisah menjadi _training_ dan _testing dataset_. 
 3.	Pemodelan  
-Base model dibangun dengan satu LSTM layer dan satu regressor layer. Setelah itu, model dilatih sebanyak sepuluh epoch saja. Setelah memvisualisasi loss dan MAE model, base model dimodifikasi dengan menambahkan dua LSTM layer. Model kedua pun dilatih menggunakan sepuluh epoch. Terakhir, dilakukan visualisasi loss dan MAE model.  
+_Base model_ dibangun dengan satu LSTM _layer_ dan satu _regressor layer_. Setelah itu, model dilatih sebanyak sepuluh _epoch_ saja. Setelah memvisualisasi _loss_ dan MAE model, _base model_ dimodifikasi dengan menambahkan dua LSTM _layer_. Model kedua pun dilatih menggunakan sepuluh _epoch_. Terakhir, dilakukan visualisasi _loss_ dan MAE model.  
 4.	Evaluasi model  
-Selain menggunakan visualisasi MAE dan loss model, evaluasi juga dilakukan menggunakan skor MAE, MSE, dan R2 yang dilakukan pada testing dataset.  
+Selain menggunakan visualisasi MAE dan _loss_ model, evaluasi juga dilakukan menggunakan skor MAE, MSE, dan R2 yang dilakukan pada _testing dataset_.  
 
 **Hasil dan Kesimpulan:**  
 Setelah membandingkan kinerja kedua model, ditemukan bahwa model kedua memiliki akurasi yang jauh lebih tinggi daripada model pertama. Berikut adalah skor masing-masing model.  
-Base model MAE score: 28.658918180622038  
-Base model MSE score: 1464.3793530144183  
-Base model R2 score: -0.1957010917268791  
+_Base model MAE score_: 28.658918180622038  
+_Base model MSE score_: 1464.3793530144183  
+_Base model R2 score_: -0.1957010917268791  
 
-Modified model MAE score: 9.92235530888448  
-Modified model MSE score: 241.13943737034398  
-Modified model R2 score: 0.8031038283020051  
+_Modified model MAE score_: 9.92235530888448  
+_Modified model MSE score_: 241.13943737034398  
+_Modified model R2 score_: 0.8031038283020051  
 
-**Teknologi dan libraries yang digunakan:**  
+**Teknologi dan _Libraries_ yang Digunakan:**  
 •	LSTM Model  
 •	pandas  
 •	numpy  
